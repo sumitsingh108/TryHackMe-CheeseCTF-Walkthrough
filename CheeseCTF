@@ -1,21 +1,3 @@
-# Project Overview
-
-A complete Capture The Flag (CTF) walkthrough demonstrating real-world penetration testing methodology including reconnaissance, enumeration, exploitation, privilege escalation, and flag capture on a vulnerable Linux machine.
-
-This project highlights hands-on cybersecurity skills aligned with SOC Analyst / Penetration Tester roles.
-
-# Author Information
-
-Name: Sumit Singh
-
-Platform: TryHackMe
-
-CTF Name: CheeseCTF
-
-Date: 31 July 2025
-
-Target IP: 10.10.140.14
-
 # Tools & Technologies Used
 
 Nmap – Network scanning & service enumeration
