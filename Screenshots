@@ -1,0 +1,31 @@
+Screenshots & Evidence
+
+Screenshots captured during each phase of the CTF to demonstrate methodology and tool usage.
+
+🔹 VPN Connection
+📷 Screenshot: OpenVPN successfully connected
+Location: screenshots/vpn-connection.png
+
+🔹 Nmap Scan Results
+📷 Screenshot: Open ports and service versions identified using Nmap
+Location: screenshots/nmap-scan.png
+
+🔹 Web Enumeration (Gobuster)
+📷 Screenshot: Discovered hidden directories and files
+Location: screenshots/gobuster-enum.png
+
+🔹 Exploitation & Reverse Shell
+📷 Screenshot: Reverse shell access as www-data user
+Location: screenshots/reverse-shell.png
+
+🔹 Privilege Escalation (LinPEAS)
+📷 Screenshot: Privilege escalation vectors identified using LinPEAS
+Location: screenshots/linpeas-output.png
+
+🔹 Root Access Confirmation
+📷 Screenshot: Root access achieved
+Location: screenshots/root-access.png
+
+🔹 Flag Capture
+📷 Screenshot: User and Root flags captured
+Location: screenshots/flags.png
